@@ -52,9 +52,8 @@
     [section setTitleColor:self.headerTitleColor
                   forState:UIControlStateNormal];
     
-    [sectionView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
-    [sectionView setAutoresizesSubviews:YES];
-    
+    [section setContentEdgeInsets:UIEdgeInsetsMake(0, 10, 0, 10)];
+    section.titleLabel.adjustsFontSizeToFitWidth = YES;
     [self.sections addObject:section];
     [self.views addObject:sectionView];
     
