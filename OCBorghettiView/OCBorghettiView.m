@@ -29,20 +29,8 @@
 {
     self = [super initWithFrame:frame];
     
-    if (self){
+    if (self)
         [self initBorghetti];
-    }
-    
-    return self;
-}
-
--(instancetype)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    
-    if (self){
-        [self initBorghetti];
-    }
     
     return self;
 }
@@ -173,18 +161,12 @@
         sectionViewFrame.origin.y = height;
         
         if (self.activeSection == i) {
-            [sectionTitle setImage:[UIImage imageNamed:@"OCBorghettiView.bundle/icon_down_arrow.png"]
-                          forState:UIControlStateNormal];
-            
             sectionViewFrame.size.height = (self.frame.size.height - (self.numberOfSections * self.headerHeight));
             [sectionView setFrame:CGRectMake(0, sectionViewFrame.origin.y, self.frame.size.width, 0)];
             
             if ([sectionView respondsToSelector:@selector(setScrollsToTop:)])
                 [sectionView setScrollsToTop:YES];
         } else {
-            [sectionTitle setImage:[UIImage imageNamed:@"OCBorghettiView.bundle/icon_right_arrow.png"]
-                          forState:UIControlStateNormal];
-            
             sectionViewFrame.size.height = 0;
             
             if ([sectionView respondsToSelector:@selector(setScrollsToTop:)])
